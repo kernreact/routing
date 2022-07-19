@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Routing
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Data
 import routes from './routes';
@@ -45,11 +45,16 @@ const App = () => {
                     <div className="column is-one-quarter">
                         <Sidebar />
                     </div>
+                    <div className="column is-one-quarter">
+                        <SignOut />
+                    </div>
                     <div className="column">
-                        <Switch>
+                        <Routes>
+                            {/*
                             <Route path="/signout">
                                 <SignOut />
                             </Route>
+                            */}
                             {
                               allRoutes && allRoutes.map(item => (
                                   <Route
@@ -69,7 +74,7 @@ const App = () => {
                                     404 - Page not found
                                 </h1>
                             </Route>
-                        </Switch>
+                        </Routes>
                     </div>
                 </div>
             </div>
